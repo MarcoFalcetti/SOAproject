@@ -1,0 +1,63 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+[32m :: Spring Boot :: [39m      [2m (v2.3.4.RELEASE)[0;39m
+
+[2m2020-10-07 11:43:03.577[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.ATMproject.SOA.AtMprojectApplication  [0;39m [2m:[0;39m Starting AtMprojectApplication on reset-xx with PID 19372 (C:\Users\Marco\Documents\unimi\soa\WorkspaceSpring\ATMproject\target\classes started by Marco in C:\Users\Marco\Documents\unimi\soa\WorkspaceSpring\ATMproject)
+[2m2020-10-07 11:43:03.580[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.ATMproject.SOA.AtMprojectApplication  [0;39m [2m:[0;39m No active profile set, falling back to default profiles: default
+[2m2020-10-07 11:43:04.429[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 8080 (http)
+[2m2020-10-07 11:43:04.436[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2020-10-07 11:43:04.436[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.38]
+[2m2020-10-07 11:43:04.502[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.a.c.c.C.[.[localhost].[/ATMservice]   [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2020-10-07 11:43:04.502[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 880 ms
+[2m2020-10-07 11:43:04.743[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.a.c.w.s.f.ReflectionServiceFactoryBean[0;39m [2m:[0;39m Creating Service {http://SOA.ATMproject.com/}ATMwsImplService from class org.example.webserviceatm.WebServiceATM
+[2m2020-10-07 11:43:05.093[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.apache.cxf.endpoint.ServerImpl      [0;39m [2m:[0;39m Setting the server's publish address to be /ATMservice
+[2m2020-10-07 11:43:05.194[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [2m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[2m2020-10-07 11:43:05.315[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 8080 (http) with context path '/ATMservice'
+[2m2020-10-07 11:43:05.323[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.ATMproject.SOA.AtMprojectApplication  [0;39m [2m:[0;39m Started AtMprojectApplication in 1.996 seconds (JVM running for 2.735)
+[2m2020-10-07 11:43:26.352[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.a.c.s.A.ATMwsImplPort.WebServiceATM   [0;39m [2m:[0;39m Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:8080/ATMservice/ATMservice?wsdl
+Encoding: UTF-8
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[*/*], cache-control=[no-cache], connection=[keep-alive], Content-Type=[null], host=[localhost:8080], pragma=[no-cache], user-agent=[Apache-CXF/3.3.7]}
+--------------------------------------
+[2m2020-10-07 11:43:26.485[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [36mo.a.c.s.A.ATMwsImplPort.WebServiceATM   [0;39m [2m:[0;39m Inbound Message
+----------------------------
+ID: 2
+Address: http://localhost:8080/ATMservice/ATMservice?wsdl=WebServiceATM.wsdl
+Encoding: UTF-8
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[*/*], cache-control=[no-cache], connection=[keep-alive], Content-Type=[null], host=[localhost:8080], pragma=[no-cache], user-agent=[Apache-CXF/3.3.7]}
+--------------------------------------
+[2m2020-10-07 11:43:27.171[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [36mo.a.c.s.A.ATMwsImplPort.WebServiceATM   [0;39m [2m:[0;39m Inbound Message
+----------------------------
+ID: 3
+Address: http://localhost:8080/ATMservice/ATMservice
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml; charset=UTF-8
+Headers: {Accept=[*/*], cache-control=[no-cache], connection=[keep-alive], Content-Length=[375], content-type=[text/xml; charset=UTF-8], host=[localhost:8080], pragma=[no-cache], SOAPAction=[""], user-agent=[Apache-CXF/3.3.7]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:prelievoRequestEl xmlns:ns2="http://www.example.org/WebServiceATM/"><cartaDebito><idcartaDebito>4567</idcartaDebito><PIN>0</PIN><idUtente>0</idUtente><idcontoCorrente>1234</idcontoCorrente></cartaDebito><pin>0</pin><importo>500</importo></ns2:prelievoRequestEl></soap:Body></soap:Envelope>
+--------------------------------------
+saldo = 1000
+importo = 500
+nuovo saldo = 500
+[2m2020-10-07 11:43:27.222[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [36mo.a.c.s.A.ATMwsImplPort.WebServiceATM   [0;39m [2m:[0;39m Outbound Message
+---------------------------
+ID: 3
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml
+Headers: {}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:prelievoResponseEl xmlns:ns2="http://www.example.org/WebServiceATM/"><result>true</result></ns2:prelievoResponseEl></soap:Body></soap:Envelope>
+--------------------------------------
+[2m2020-10-07 11:47:30.710[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[on(2)-127.0.0.1][0;39m [36minMXBeanRegistrar$SpringApplicationAdmin[0;39m [2m:[0;39m Application shutdown requested.
+[2m2020-10-07 11:47:31.036[0;39m [32m INFO[0;39m [35m19372[0;39m [2m---[0;39m [2m[on(2)-127.0.0.1][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [2m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'

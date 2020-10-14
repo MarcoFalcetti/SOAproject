@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.example.org/WebServiceATM/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebServiceATM"
+	targetNamespace="http://www.example.org/WebServiceATM/">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://www.example.org/WebServiceATM/"
+			elementFormDefault="unqualified"
+			targetNamespace="http://www.example.org/WebServiceATM/" version="1.0">
+
+			<!-- _________ELEMENTI STRUTTURATI__________ -->
+
+			<xs:complexType name="utente">
+				<xs:sequence>
+					<xs:element name="idUtente" type="xs:integer" />
+					<!-- <xs:element name="nome" type="xs:string" /> -->
+					<!-- <xs:element name="cognome" type="xs:string" /> -->
+					<xs:element name="idcontoCorrente" type="xs:integer" />
+					<xs:element name="idcartaDebito" type="xs:integer" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="contoCorrente">
+				<xs:sequence>
+					<xs:element name="idcontoCorrente" type="xs:integer" />
+					<xs:element name="idUtente" type="xs:integer" />
+					<xs:element name="idcartaDebito" type="xs:integer" />
+					<xs:element name="saldo" type="xs:integer" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<xs:complexType name="cartaDebito">
+				<xs:sequence>
+					<xs:element name="idcartaDebito" type="xs:integer" />
+					<!-- <xs:element name="dataScadenza" type="xs:date" /> -->
+					<xs:element name="PIN" type="xs:integer" />
+					<xs:element name="idUtente" type="xs:integer" />
+					<xs:element name="idcontoCorrente" type="xs:integer" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<!-- ________________ SCHEMA MESSAGGI ______________ -->
+
+			<xs:complexType name="prelievoRequestSchema">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="cartaDebito"
+						type="tns:cartaDebito" />
+					<xs:element minOccurs="0" name="pin" type="xs:integer" />
+					<xs:element minOccurs="0" name="importo"
+						type="xs:integer" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="prelievoResponseSchema">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="result"
+						type="xs:boolean" />
+				</xs:sequence>
+			</xs:complexType>
+
+			<!-- ________________ ELEMENTI USATI NEI MESSAGGI _____________ -->
+
+			<xs:element name="prelievoRequestEl"
+				type="tns:prelievoRequestSchema" />
+			<xs:element name="prelievoResponseEl"
+				type="tns:prelievoResponseSchema" />
+
+		</xs:schema>
+	</wsdl:types>
+
+	<wsdl:message name="prelievoRequestMess">
+		<wsdl:part element="tns:prelievoRequestEl" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="prelievoResponseMess">
+		<wsdl:part element="tns:prelievoResponseEl"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+
+	<wsdl:portType name="WebServiceATM">
+		<wsdl:operation name="prelievo">
+			<wsdl:input message="tns:prelievoRequestMess"
+				name="prelievoRequestMess">
+			</wsdl:input>
+			<wsdl:output message="tns:prelievoResponseMess"
+				name="prelievoResponseMess">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="WebServiceATMSOAP"
+		type="tns:WebServiceATM">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="prelievo">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="prelievoRequestMess">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="prelievoResponseMess">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="WebServiceATM">
+		<wsdl:port binding="tns:WebServiceATMSOAP"
+			name="WebServiceATMSOAP">
+			<soap:address
+				location="http://localhost:8080/ATMservice/services/atmService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
