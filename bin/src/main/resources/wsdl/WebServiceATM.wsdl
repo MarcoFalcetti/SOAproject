@@ -67,6 +67,9 @@
 			<xs:element name="prelievoResponseEl"
 				type="tns:prelievoResponseSchema" />
 
+			<!-- SOA è UNA MATERIA DI MERDA -->
+			<!-- CONCORDO -->
+
 		</xs:schema>
 	</wsdl:types>
 
