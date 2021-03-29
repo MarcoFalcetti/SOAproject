@@ -10,6 +10,8 @@ import org.example.webserviceatm.CartaDebito;
 import org.example.webserviceatm.ContoCorrente;
 import org.example.webserviceatm.PrelievoRequestSchema;
 import org.example.webserviceatm.PrelievoResponseSchema;
+import org.example.webserviceatm.VersamentoRequestSchema;
+import org.example.webserviceatm.VersamentoResponseSchema;
 import org.example.webserviceatm.WebServiceATM;
 
 
@@ -70,6 +72,34 @@ public class ATMwsImpl implements WebServiceATM {
 					System.out.println("nuovo saldo = " + contiCorrente.get(0).getSaldo().intValue());
 					response.setResult(true);
 				}
+	
+		return response;
+	}
+
+	@Override
+	public VersamentoResponseSchema versamento(VersamentoRequestSchema request) {
+		CartaDebito cartaDebito = request.getCartaDebito();
+		BigInteger pin = request.getPin();
+		int importo = request.getImporto().intValue();
+
+		VersamentoResponseSchema response = new VersamentoResponseSchema();
+		response.setResult(false);
+		
+		int saldo = contiCorrente.get(0).getSaldo().intValue();
+		
+		System.out.println("saldo = " + saldo);
+		System.out.println("importo = " + importo);
+		
+		//controllo associazione carta a conto corrente corrispondente tramite i rispettivi id
+		//controllo id carta
+		if(cartaDebito.getIdcontoCorrente().equals(contiCorrente.get(0).getIdcontoCorrente()) && 
+				cartaDebito.getIdcartaDebito().equals(carteDebito.get(0).getIdcartaDebito()))
+			//controllo pin carta
+			if (pin.equals(carteDebito.get(0).getPIN()))
+				//controllo disponibilità fondi
+					contiCorrente.get(0).setSaldo(BigInteger.valueOf(saldo + importo));
+					System.out.println("nuovo saldo = " + contiCorrente.get(0).getSaldo().intValue());
+					response.setResult(true);
 	
 		return response;
 	}

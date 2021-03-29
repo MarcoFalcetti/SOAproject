@@ -130,6 +130,22 @@
 						type="xs:boolean" />
 				</xs:sequence>
 			</xs:complexType>
+			
+			<xs:complexType name="versamentoRequestSchema">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="cartaDebito"
+						type="tns:cartaDebito" />
+					<xs:element minOccurs="0" name="pin" type="xs:integer" />
+					<xs:element minOccurs="0" name="importo"
+						type="xs:integer" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="versamentoResponseSchema">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="result"
+						type="xs:boolean" />
+				</xs:sequence>
+			</xs:complexType>
 
 			<!-- ________________ ELEMENTI USATI NEI MESSAGGI _____________ -->
 
@@ -138,7 +154,10 @@
 			<xs:element name="prelievoResponseEl"
 				type="tns:prelievoResponseSchema" />
 
-
+			<xs:element name="versamentoRequestEl"
+				type="tns:versamentoRequestSchema" />
+			<xs:element name="versamentoResponseEl"
+				type="tns:versamentoResponseSchema" />
 		</xs:schema>
 
 	</wsdl:types>
@@ -160,6 +179,27 @@
 			</wsdl:input>
 			<wsdl:output message="tns:prelievoResponseMess"
 				name="prelievoResponseMess">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:message name="versamentoRequestMess">
+		<wsdl:part element="tns:versamentoRequestEl" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="versamentoResponseMess">
+		<wsdl:part element="tns:versamentoResponseEl"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+
+	<wsdl:portType name="WebServiceATM">
+		<wsdl:operation name="versamento">
+			<wsdl:input message="tns:versamentoRequestMess"
+				name="versamentoRequestMess">
+			</wsdl:input>
+			<wsdl:output message="tns:versamentoResponseMess"
+				name="versamentoResponseMess">
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:portType>
@@ -190,6 +230,17 @@
 				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output name="prelievoResponseMess">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="versamento">
+
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="versamentoRequestMess">
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="versamentoResponseMess">
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
