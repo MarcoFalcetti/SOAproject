@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 	xmlns:tns="http://www.example.org/WebServiceATM/"
 	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
@@ -210,7 +211,10 @@
 			operazioni -->
 		<!-- <wsp:PolicyReference
 			xmlns:wsp="http://www.w3.org/ns/ws-policy" URI="#UsernameToken" /> -->
-
+		
+	  	<wsaw:UsingAddressing wsdl:required="true" />   
+		<!-- serve per attivare WS-Addressing -->
+		
 		<soap:binding style="document"
 			transport="http://schemas.xmlsoap.org/soap/http" />
 
@@ -226,6 +230,7 @@
 					del messaggio in input -->
 				<!-- <wsp:PolicyReference
 					xmlns:wsp="http://www.w3.org/ns/ws-policy" URI="#EncrBody" /> -->
+			
 
 				<soap:body use="literal" />
 			</wsdl:input>
@@ -244,6 +249,9 @@
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
+		
+	<!--  	<wsaw:Anonymous>required</wsaw:Anonymous> -->
+	
 	</wsdl:binding>
 
 	<wsdl:service name="WebServiceATM">
