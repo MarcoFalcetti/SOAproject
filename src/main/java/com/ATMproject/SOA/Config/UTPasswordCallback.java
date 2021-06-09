@@ -21,6 +21,7 @@ public class UTPasswordCallback implements CallbackHandler {
 	public UTPasswordCallback() {
 		passwords.put("pippo", "segreto");
 		passwords.put("myservicekey", "skpass");
+		passwords.put("pluto", "paperino");
 	}
 		
 	@Override

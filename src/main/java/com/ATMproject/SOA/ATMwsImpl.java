@@ -43,6 +43,24 @@ public class ATMwsImpl implements WebServiceATM {
 
 		contiCorrente.add(contoCorrente);
 		carteDebito.add(cartaDebito);
+		
+		ContoCorrente contoCorrente2 = new ContoCorrente();
+		CartaDebito cartaDebito2 = new CartaDebito();
+
+		contoCorrente2.setIdcontoCorrente(BigInteger.valueOf(2));
+		cartaDebito2.setIdcartaDebito(BigInteger.valueOf(2));
+
+		contoCorrente2.setSaldo(BigInteger.valueOf(1000));
+		cartaDebito2.setPIN(BigInteger.valueOf(1234));
+
+		contoCorrente2.setIdUtente(BigInteger.valueOf(1));
+		cartaDebito2.setIdUtente(BigInteger.valueOf(1));
+		
+		contoCorrente2.setIdcartaDebito(cartaDebito2.getIdcartaDebito());
+		cartaDebito2.setIdcontoCorrente(contoCorrente2.getIdcontoCorrente());
+
+		contiCorrente.add(contoCorrente2);
+		carteDebito.add(cartaDebito2);
 
 	}
 
